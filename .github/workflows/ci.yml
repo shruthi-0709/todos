@@ -1,0 +1,15 @@
+name: CI Pipeline
+on: [push]  # Code push ayithe run avuthundi
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Free cloud machine
+    steps:
+    - uses: actions/checkout@v3  # Repo code teeskosthundi
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Node version set
+    - name: Install Dependencies
+      run: npm install  # Project setup
+    - name: Run Test
+      run: node app.js  # app.js run chesthundi
